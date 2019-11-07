@@ -11,69 +11,86 @@
 
     }
 
-    #Nathaniel {
+    #title {
         width: 2500px;
         height: 2500px;
         background-color: lightblue;
-       border-right: lightblue solid 10px;
+        border-right: lightblue solid 10px;
+        font-size: 50px;
 
     }
 
-    .Hello {
-    	width:100%;
+    .rectangle {
+        width: 100%;
         font-size: 23px;
-        color:white;
-       /* width: 180px;*/
+        color: white;
+        /* width: 180px;*/
         height: 75px;
-        top:0%;
+        top: 5%;
         position: relative;
-        border: black solid 5px;
-
-       
-    }
-
-    #one{
-    	        background-color: rgba(0, 0, 255, 0.5);
+        border: black solid 2px;
 
     }
 
-    #one:hover{
+    #one {
+        background-color: rgba(0, 0, 255, 0.5);
+
+    }
+
+    #one:hover {
         background-color: rgba(0, 0, 255, 1);
-        transition:1s;
+        transition: 1s;
     }
 
 
-     #two{
-    	background-color: rgba(100, 0, 255, 0.5);
+    #two {
+        background-color: rgba(100, 0, 255, 0.5);
 
     }
 
-    #two:hover{
+    #two:hover {
         background-color: rgba(100, 0, 255, 1);
-        transition:1s;
+        transition: 1s;
+    }
+
+    #Nathaniel {
+        font-size: 20px;
+    }
+
+    #background {
+        width:1285px;
+        height:1000px;
+        background-image:url("https://secure.i.telegraph.co.uk/multimedia/archive/02357/eso-summary_2357457k.jpg");
+        background-size:cover;
     }
     </style>
 </head>
 
 <body>
-    <div id="Nathaniel">
-        <div id="one" class="Hello">
-            <p>Hello!
-            This is <a href="journal.html">My coding journal</a></p>
-        </div>
-        <div id="two" class="Hello">
-            <p>Hello!
-            This is my personal website!</p>
-        </div>
-        <div class="Hello">
-            <p>Hello!
-            This is my personal website!</p>
-        </div>
-        <div class="Hello">
-            <p>Hello!
-            This is my personal website!</p>
-        </div>
-    </div>
+    <div id="title">
+        My Website
+        <div id="Nathaniel">
+            by <a href="Bio.html">Nathaniel Cheng</a>
+            <div id="one" class="rectangle">
+                <p>This is <a href="journal.html">My coding journal</a></p>
+            </div>
+            <div id="two" class="rectangle">
+                <p> This is <a href="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjS-6Wey7LlAhUSTN8KHeLbBbgQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.engadget.com%2F2019%2F06%2F28%2Fsingle-cosmic-radio-burst-origin%2F&psig=AOvVaw1XaUNFmwj7JCO6YPbLtCF8&ust=1571927150108501">a cool space article</a></p>
+            </div>
+            <div class="rectangle">
+                <p> This is the beginning of my project: <a href="https://scratch.mit.edu/projects/341837140/editor">creating a perfect circle on scratch<a></p>
+            </div>
+            <div class="rectangle">
+                <p>
+                    Placeholder</p>
+
+
+            </div>
+
+            <div id="background">
+               <!--  <img src="https://secure.i.telegraph.co.uk/multimedia/archive/02357/eso-summary_2357457k.jpg"> -->
+            </div>
+       
 </body>
 
 </html>
