@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Codesketch Pictionary</title>
+</head>
+<body>
+<style>
+
+	#face{
+		height:100px;
+		width:100px;
+		background-image:url(https://www.pngarts.com/files/1/Sad-Face-Free-PNG-Image.png);
+		border-radius:50%;
+		position:relative;
+		top:500px;
+		left:182px;
+		background-size:contain;
+		background-repeat:no-repeat;
+		z-index:99999;
+	}
+
+	#poop{
+		height:70px;
+		width:70px;
+		background-image:url(https://www.freepnglogos.com/uploads/poop-png/poop-emojis-archives-jason-graham-4.png);
+		top:50px;
+		left:200px;
+		position:relative;
+		background-size:cover;
+		background-repeat:no-repeat;
+		z-index:999999;
+
+	}
+
+
+	#bird{
+		height:400px;
+		width:400px;
+		background-image:url(https://pngriver.com/wp-content/uploads/2017/11/bird-sparrow-animal-transparent-png-images-free-download-008.png);
+		position:relative;
+		background-size:cover;
+		background-repeat:no-repeat;
+		top:-175px;
+		left:30px;
+		z-index:999999;
+		
+	}
+
+	#park{
+		height:1200px;
+		width:2000px;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-image:url(https://cdn.britannica.com/71/189171-050-B4A7DA05/Central-Park-New-York-City.jpg);
+		position:relative;
+		top:-1000px;
+		
+	}
+</style>
+<div id = "face">
+</div>
+<div id = "poop">
+</div>
+	<div id = "bird">
+	</div>
+	<div id = "park">
+	</div>
+
+<script type='text/javascript'>
+
+
+	function myMove() {
+  var elem = document.getElementById("poop");
+  var pos = 50;
+  var id = setInterval(frame, 1);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+      elem.style.top=50;
+      myMove();
+    } else {
+      pos++;
+      elem.style.top = pos + 1 + 'px';
+    }
+  }
+}
+myMove();
+
+	
+
+</script>
+</body>
+</html>

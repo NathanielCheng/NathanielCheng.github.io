@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FunctionHomework</title>
-		<style>
-			#button{
-				width:100px;
-				height:100px;
-				background-color:blue;
-			}
-		</style>
-
+	<title>Function Homework</title>
 </head>
 <body>
+	This website generates a random number between 1 and 100. If the number is less than 50, then the box will turn red. If the number is greater or equal to 50, then the box will turn green. Click to generate the box. Have fun!
+<style> 
+	#bob{
+	height:100px;
+	width:100px;
+	
+}
+</style>
+	<div id = "bob">
+	</div>
+<script type = "text/javascript">
+	
 
-		<div id="button"></div>
-
-		<script type="text/javascript"
-		>
-				var button = document.getElementById("button");
-				
-				document.addEventListener(
-					"click", function(event){
-						button.style.backgroundColor = "red";
-					}
-					
-						
-				document.addEventListener(
-					"move", function(event){
-						button.style.
-							opacity = 0.5;
+document.addEventListener("click", function generate(){
+		var x = Math.ceil(Math.random() * 100);
+	
+		if (x < 50) {
+			document.getElementById("bob").style.backgroundColor = "red";
+			document.getElementById("bob").innerHTML=(x);
+			
+		}	else	{
+			document.getElementById("bob").style.backgroundColor = "green";
+			document.getElementById("bob").innerHTML=(x);		
+	}
+})
 
 
-
-						})
-						</script>
-				
-					
-					
+</script>
 </body>
 </html>

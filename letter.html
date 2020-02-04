@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy Birthday Batch!</title>
+</head>
+<body>
+<div id="Lucas">
+</div>
+<div id="picture">
+	</div>
+<div id="picture2">
+	</div>
+<div id="picture3">
+	</div>
+<div id="text">
+	<p>Dear Batch,</p>
+		<p>		Thanks for being such a great dad. Christian, Gabby, Lucas and I are so lucky to have someone like you in our lives. Also, congratulations on the upcoming baby. She will bring so much joy and variety to our lives as a baby girl, and she is even luckier to have you as her dad. Thanks again for taking care of us and for always having our best interests in mind. I hope you have a great birthday!</p>
+		<p> Sincerely,</p> 
+			Nathaniel
+</div>
+<style>
+	#picture{
+		height:500px;
+		width:350px;
+		background-image:url(https://imgur.com/gvJs07W.png);
+		background-size:cover;
+    	background-repeat:no-repeat;
+    	position:relative;
+    	left:25px;
+	}
+	#picture2{
+		height:500px;
+		width:350px;
+		background-image:url(https://imgur.com/1eEqv98.png);
+		background-size:cover;
+		background-repeat:no-repeat;
+		position:relative;
+		left:447px;
+		top:-500px;
+	
+	}
+	#picture3{
+		height:500px;
+		width:400px;
+		background-image:url(https://imgur.com/c77hwBQ.jpg);
+		background-size:cover;
+		background-repeat:no-repeat;
+		position:relative;
+		left:870px;
+		top:-1000px;
+	}
+	#text{
+		position:relative;
+		top:-1000px;
+		font-size:20px;
+		left:25px;
+	}
+#Lucas{
+	width:100px;
+	height:100px;
+	background-image:url(https://imgur.com/NU5W16Z.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 600ms;
+  transition-timing-function: ease-out;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 9999
+  
+
+}
+</style>
+
+<script type ="text/javascript">
+
+document.addEventListener("mousemove", function(e) {
+       Lucas.style.left = event.x - 20 + "px";
+       Lucas.style.top = event.y - 20 + "px";
+        Lucas.style.position = "absolute";
+       
+    })
+
+
+</script>
+
+</body>
+</html>

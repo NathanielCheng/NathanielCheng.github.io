@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    Move your mouse over the canvas and click it to start drawing. When you are done, click again to stop drawing. If you need to restart, refresh the page.
+    <p>Good luck!</p>
+    <title>Circle Drawing Game</title>
+    <style>
+        #canvas{
+            width:750px;
+            height:750px;
+            background: rgba(171, 205, 239, 0.2);
+            border: solid 1px black;
+            position:fixed;
+            top:100px;
+            left:250px;
+            z-index: 9999
+            
+            
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- The canvas is the only space on the screen where the drawing happens -->
+    <div id="canvas">
+    </div>
+    <div id="penDot">
+    </div>
+    <button type="button" onclick="random_bg_color()">Click Me To Randomize Colors!</button>
+    <script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    var click = 0;
+
+
+    function random_bg_color() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+
+        document.body.style.background = bgColor;
+    }
+
+    random_bg_color();
+
+    //HERE IS OUR RECIPE TO MAKE DIVS BELOW//
+
+    function makeCircle() {
+        //This function creates a dot at the location of the mouse everytime the mouse moves
+        var penDot = document.createElement("div");
+        document.body.appendChild(penDot);
+        penDot.style.width = "15px";
+        penDot.style.height = "15px";
+        penDot.style.backgroundColor = "black";
+        penDot.style.borderRadius = "50%";
+        penDot.style.left = event.x + "px";
+        penDot.style.top = event.y + "px";
+        penDot.style.position = "absolute";
+
+    };
+
+
+
+    //HERE WE ARE ADDING A CLICK EVENT LISTENER TO THE CANVAS_WITHIN THAT CLICK EVENT LISTENER WE ARE ADDING A MOUSEMOVE EVENT LISTENER _ONLY_ WHEN THE VARIABLE CLICK IS ODD. WHEN THE VARIABLE CLICK IS EVEN, THE EVENT LISTENER IS REMOVED
+
+    canvas.addEventListener("click", function wtf() {
+            click = click + 1;
+            console.log("click is " + click);
+
+            if (click % 2 == 1) //This defines odd number of clicks
+
+            {
+                canvas.addEventListener("mousemove", makeCircle)
+            } else if (click % 2 == 0) //This defines even number clicks
+
+            {
+                var mod = click % 2;
+                console.log(mod);
+                canvas.removeEventListener("mousemove", makeCircle)
+            }
+
+        }
+
+    );
+
+
+    // penDot.addEventListener("click", function wtf() {
+    //             click = click + 1;
+    //             console.log("click is " + click);
+
+    //             if (click % 2 == 1) //This defines odd number of clicks
+
+    //             {
+    //                 penDot.addEventListener("mousemove", makeCircle)
+    //             } else if (click % 2 == 0) //This defines even number clicks
+
+    //             {
+    //                 var mod = click % 2;
+    //                 console.log(mod);
+    //                 penDot.removeEventListener("mousemove", makeCircle)
+    //             }
+
+    //         }
+
+    //     );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var pen = document.getElementById("pen");
+    // document.addEventListener(
+    //  "mousemove", function(event){
+    //      console.log(event);
+    //      pen.style.left=event.x-5 + "px";
+    //      pen.style.top=event.y-5 + "px";
+
+    //  })
+
+    // var yeet = document.getElementById("pen");
+    // document.addEventListener(
+    //  "mousedown", function(event){
+    //      console.log(event);
+    //      duplicate()
+    //  })
+    // function duplicate(){
+    // var clone = document.getElementById("pen");
+    // var divClone = clone.cloneNode(true);
+    // document.body.appendChild(divClone);
+    //      }
+    </script>
+</body>
+
+</html>

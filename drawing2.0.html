@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Circle Drawing Game</title>
+    <style>
+        #canvas{
+			width:500px;
+			height:500px;
+			background-color:white;
+			border: solid 1px black;
+			position:fixed;
+			top:100px;
+			left:100px;
+			
+			
+		}
+	</style>
+</head>
+
+<body>
+    <div id="canvas">
+    </div>
+    <script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    var click = 0;
+
+    //HERE IS OUR RECIPE TO MAKE DIVS BELOW//
+
+    function makeCircle() {
+
+        var penDot = document.createElement("div");
+        document.body.appendChild(penDot);
+        penDot.style.x = "10";
+        penDot.style.width = "10px";
+        penDot.style.height = "10px";
+        penDot.style.backgroundColor = "red";
+        penDot.style.borderRadius = "50%";
+        penDot.style.left = event.x + 10 + "px";
+        penDot.style.top = event.y + 10 + "px";
+        penDot.style.position = "absolute";
+    };
+
+
+
+    //HERE WE ARE ADDING A CLICK EVENT LISTENER TO THE CANVAS _WITHIN_ THAT CLICK EVENT LISTENER WE ARE ADDING A MOUSEVOVE EVENT LISTENER _ONLY_ WHEN THE VARIABLE CLICK IS ODD. WE ARE TRYING TO REMOVE THAT EVENT LISTENER WHEN THE CLICK VARIABLE IS EVEN.
+
+    canvas.addEventListener("click", function wtf() {
+            click = click + 1;
+            console.log("click is " + click);
+
+            if (click % 2 == 1) {
+                canvas.addEventListener("mousemove", makeCircle)
+            }
+
+            else if (click % 2 == 0)
+
+            {
+                var mod = click % 2;
+                console.log(mod);
+                canvas.removeEventListener("mousemove", makeCircle)
+            }
+
+        }
+
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var pen = document.getElementById("pen");
+    // document.addEventListener(
+    // 	"mousemove", function(event){
+    // 		console.log(event);
+    // 		pen.style.left=event.x-5 + "px";
+    // 		pen.style.top=event.y-5 + "px";
+
+    // 	})
+
+    // var yeet = document.getElementById("pen");
+    // document.addEventListener(
+    // 	"mousedown", function(event){
+    // 		console.log(event);
+    // 		duplicate()
+    // 	})
+    // function duplicate(){
+    // var clone = document.getElementById("pen");
+    // var divClone = clone.cloneNode(true);
+    // document.body.appendChild(divClone);
+    // 		}
+
+    //try to write a recipe function that makes a div with specific styling//
+    </script>
+</body>
+
+</html>
